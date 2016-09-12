@@ -9,9 +9,16 @@ import { Config} from './shared/index';
   moduleId: module.id,
   selector: 'sd-app',
   templateUrl: 'app.component.html',
+  styles: [`
+    .sebm-google-map-container {
+      height: 300px;
+    }
+  `]
 })
 
 export class AppComponent {
+  lat: number = 51.678418;
+  lng: number = 7.809007;
   constructor() {
     console.log('Environment config', Config);
   }

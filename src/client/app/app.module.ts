@@ -10,13 +10,25 @@ import { AboutModule } from './about/about.module';
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 
+import { AgmCoreModule } from 'angular2-google-maps/core/index.js';
+import { provideLazyMapsAPILoaderConfig } from 'angular2-google-maps/core';
+
 @NgModule({
-  imports: [BrowserModule, HttpModule, RouterModule.forRoot(routes), AboutModule, HomeModule, SharedModule.forRoot()],
+  imports: [BrowserModule, HttpModule, RouterModule.forRoot(routes),
+    AboutModule, HomeModule, SharedModule.forRoot(),
+    AgmCoreModule.forRoot()
+  ],
   declarations: [AppComponent],
-  providers: [{
-    provide: APP_BASE_HREF,
-    useValue: '<%= APP_BASE %>'
-  }],
+  providers: [
+    {
+      provide: APP_BASE_HREF,
+      useValue: '<%= APP_BASE %>'
+    },
+    provideLazyMapsAPILoaderConfig({
+      apiKey: 'AIzaSyAjxgxEyTkkSArKxWXdqNinrQ5tBsVX5Co',
+      clientId: ''
+    })
+  ],
   bootstrap: [AppComponent]
 
 })
