@@ -19,5 +19,8 @@
   "compileOnSave": false,
   "files": [
     "typings.d.ts"
+  ],
+  "filesGlob": [
+    "**/*.ts"
   ]
 }

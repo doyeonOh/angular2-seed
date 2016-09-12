@@ -33,7 +33,6 @@ export class ProjectConfig extends SeedConfig {
 
     /* Add to or override NPM module configurations: */
     // this.mergeObject(this.PLUGIN_CONFIGS['browser-sync'], { ghostMode: false });
-
     // angular2 google maps SYSTEM_CONFIG_DEV
     this.SYSTEM_CONFIG_DEV.paths['angular2-google-maps/core'] = `node_modules/angular2-google-maps/core/index.js`;
     this.SYSTEM_CONFIG_DEV.packages['angular2-google-maps/core'] = {  main: 'index.js', defaultExtension: 'js' };
